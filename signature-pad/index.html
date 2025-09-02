@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Signature Pad</title>
+
+    <!-- Tailwind CDN (for quick demo) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="stylesheet" href="./css/styles.css" />
+</head>
+
+<body class="bg-gray-100 min-h-screen flex items-center justify-center p-6">
+
+    <main class="w-full max-w-2xl">
+        <div class="bg-white rounded-2xl shadow-xl p-8">
+            <h1 class="text-2xl typewriter font-semibold text-center mb-6">Signature Pad</h1>
+
+            <div class="mx-auto max-w-xl">
+                <div class="bg-white p-6 rounded-xl border border-gray-100">
+                    <!-- Canvas wrapper to maintain aspect ratio -->
+                    <div id="canvasWrap" class="bg-white rounded-lg p-4 border-4 border-teal-400">
+                        <canvas id="sigCanvas" class="w-full h-48 md:h-56 signature-canvas"></canvas>
+                    </div>
+
+                    <div class="flex gap-4 justify-center mt-6">
+                        <button id="clearBtn"
+                            class="px-6 py-2 rounded-md bg-emerald-500 text-white shadow hover:brightness-95">Clear</button>
+                        <button id="saveBtn"
+                            class="px-6 py-2 rounded-md bg-emerald-500/90 text-white shadow hover:brightness-95">Save</button>
+                    </div>
+
+                    <div id="previewArea" class="mt-6 hidden flex-col items-center">
+                        <p class="text-sm text-gray-500 mb-2">Saved preview (click image to open):</p>
+                        <img id="savedImg" alt="Signature preview"
+                            class="border rounded-md shadow-sm cursor-pointer max-h-40" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <a id="downloadLink" download="signature.png"></a>
+
+    <script src="./js/script.js"></script>
+</body>
+
+</html>

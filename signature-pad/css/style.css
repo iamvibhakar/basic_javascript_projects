@@ -1,0 +1,16 @@
+/* small local styles for canvas border radius & cursor */
+.signature-canvas {
+    border-radius: 0.5rem;
+    cursor: crosshair;
+}
+
+/* Hide the download anchor (we create programmatically) */
+#downloadLink {
+    display: none;
+}
+
+/* simple typewriter font for the header like the screenshot */
+.typewriter {
+    font-family: "Courier New", Courier, monospace;
+    letter-spacing: 0.04em;
+}
