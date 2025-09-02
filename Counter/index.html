@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Counter</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="flex justify-center items-center min-h-screen bg-gray-100">
+
+  <div class="bg-white p-8 rounded-3xl shadow-lg text-center w-80">
+    <h1 class="text-3xl font-bold text-purple-600">Counter</h1>
+    <p class="text-gray-500 text-sm mb-6">Interactive counter component</p>
+
+    <!-- Circle Counter -->
+    <div id="countDisplay" class="w-24 h-24 flex items-center justify-center rounded-full 
+                bg-gradient-to-r from-purple-400 to-purple-600 
+                text-white text-3xl font-bold mx-auto mb-3">
+      0
+    </div>
+    <p class="text-gray-500 mb-6">Current Count</p>
+
+    <!-- Buttons -->
+    <div class="flex justify-center gap-4 mb-4">
+      <button id="decrementBtn"
+        class="px-4 py-2 rounded-xl bg-gradient-to-r from-red-400 to-pink-500 text-white font-semibold hover:opacity-90">
+        – Decrement
+      </button>
+      <button id="incrementBtn"
+        class="px-4 py-2 rounded-xl bg-gradient-to-r from-green-500 to-emerald-600 text-white font-semibold hover:opacity-90">
+        + Increment
+      </button>
+    </div>
+
+    <button id="resetBtn"
+      class="w-full px-4 py-2 rounded-xl bg-gray-500 text-white font-semibold hover:opacity-90 mb-4">
+      Reset to 0
+    </button>
+
+    <!-- Status -->
+    <div class="flex justify-between">
+      <span class="text-gray-500">Status:</span>
+      <span id="statusText" class="font-semibold text-gray-700">Zero</span>
+    </div>
+  </div>
+  <!-- Script File -->
+  <script src="/js/script.js"></script>
+</body>
+
+</html>
