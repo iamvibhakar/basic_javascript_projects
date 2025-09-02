@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Blob Generator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <div class="h-screen w-screen flex items-stretch">
+        <!-- LEFT: Blob preview (fixed width) -->
+        <div
+            class="w-1/2 min-w-[320px] bg-gradient-to-b from-slate-50 to-slate-100 flex items-center justify-center p-6">
+            <div class="w-full h-full flex items-center justify-center">
+                <div id="blob-container" class="rounded-2xl bg-white/60 p-8 shadow-lg flex items-center justify-center"
+                    style="max-width:520px; width:90%; height:90%;">
+                    <!-- The blob itself -->
+                    <div id="blob"
+                        style="width:220px; height:220px; background:var(--blob-clr); border-radius:35% 65% 60% 40% / 45% 35% 65% 55%;"
+                        class="shadow-2xl"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- RIGHT: Controls -->
+        <div class="controls w-1/2 max-w-[640px] p-6 flex flex-col justify-between">
+            <div class="space-y-4">
+                <header class="mb-2">
+                    <h1 class="text-2xl font-extrabold">Blob Generator</h1>
+                </header>
+
+                <!-- Size controls in a compact row -->
+                <div class="grid grid-cols-2 gap-3">
+                    <label class="flex flex-col">
+                        <span class="text-sm font-medium">Width (px)</span>
+                        <input id="width" type="number" min="40" max="600" value="220"
+                            class="mt-1 rounded-lg border border-slate-200 px-3 py-2 appearance-none">
+                    </label>
+                    <label class="flex flex-col">
+                        <span class="text-sm font-medium">Height (px)</span>
+                        <input id="height" type="number" min="40" max="600" value="220"
+                            class="mt-1 rounded-lg border border-slate-200 px-3 py-2 appearance-none">
+                    </label>
+                </div>
+
+                <!-- Radii controls (compact) -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <!-- TL + BL -->
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex items-center justify-between">
+                                <span class="font-semibold">Top-left</span>
+                                <small class="text-slate-500"><span id="tlxOut">35</span>% / <span
+                                        id="tlyOut">45</span>%</small>
+                            </div>
+                            <div class="mt-2 space-y-2">
+                                <input id="tlx" type="range" min="0" max="100" value="35" class="w-full compact-range">
+                                <input id="tly" type="range" min="0" max="100" value="45" class="w-full compact-range">
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="flex items-center justify-between">
+                                <span class="font-semibold">Bottom-left</span>
+                                <small class="text-slate-500"><span id="blxOut">40</span>% / <span
+                                        id="blyOut">55</span>%</small>
+                            </div>
+                            <div class="mt-2 space-y-2">
+                                <input id="blx" type="range" min="0" max="100" value="40" class="w-full compact-range">
+                                <input id="bly" type="range" min="0" max="100" value="55" class="w-full compact-range">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- TR + BR -->
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex items-center justify-between">
+                                <span class="font-semibold">Top-right</span>
+                                <small class="text-slate-500"><span id="trxOut">65</span>% / <span
+                                        id="tryOut">35</span>%</small>
+                            </div>
+                            <div class="mt-2 space-y-2">
+                                <input id="trx" type="range" min="0" max="100" value="65" class="w-full compact-range">
+                                <input id="try" type="range" min="0" max="100" value="35" class="w-full compact-range">
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="flex items-center justify-between">
+                                <span class="font-semibold">Bottom-right</span>
+                                <small class="text-slate-500"><span id="brxOut">60</span>% / <span
+                                        id="bryOut">65</span>%</small>
+                            </div>
+                            <div class="mt-2 space-y-2">
+                                <input id="brx" type="range" min="0" max="100" value="60" class="w-full compact-range">
+                                <input id="bry" type="range" min="0" max="100" value="65" class="w-full compact-range">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CSS output -->
+                <div class="mt-2">
+                    <div class="rounded-lg bg-white border border-slate-200 p-3 text-sm overflow-hidden">
+                        <code id="cssOut" class="whitespace-pre">border-radius: 35% 65% 60% 40% / 45% 35% 65% 55;</code>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Actions at bottom -->
+            <div class="mt-4 flex gap-3 items-center">
+                <button id="copyBtn" class="flex-1 rounded-lg bg-rose-500 text-white py-2 font-semibold shadow">Copy CSS
+                    Code</button>
+                <button id="sharpBtn"
+                    class="flex-1 rounded-lg bg-orange-400 text-white py-2 font-semibold shadow">Generate Random
+                    Blob</button>
+            </div>
+
+            <footer class="mt-1 text-xs text-slate-500 text-right">
+                Tip: TL TR BR BL / tl tr br bl (x / y)
+            </footer>
+        </div>
+    </div>
+
+    <script src="./js/script.js"></script>
+</body>
+
+</html>

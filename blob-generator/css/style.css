@@ -1,0 +1,31 @@
+:root {
+    --blob-clr: #f36a51;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+/* Lock page to viewport, no page scroll */
+body {
+    overflow: hidden;
+    background: #f8fafc;
+    font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial;
+}
+
+/* Make sliders visually compact on smaller heights */
+.compact-range {
+    height: 28px;
+}
+
+/* Slight smoothing for the blob */
+#blob {
+    transition: border-radius .25s ease, width .2s ease, height .2s ease, background .25s ease, transform .25s ease;
+}
+
+/* Ensure controls never overflow the page (they scale) */
+.controls {
+    min-width: 320px;
+    max-width: 640px;
+}
