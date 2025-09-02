@@ -1,0 +1,89 @@
+    /* simple styling for the crop box and handles */
+    .crop-area {
+        position: relative;
+        display: inline-block;
+    }
+
+    .crop-box {
+        position: absolute;
+        border: 3px solid rgba(99, 102, 241, 0.85);
+        box-shadow: 0 6px 18px rgba(99, 102, 241, 0.12);
+        background: rgba(255, 255, 255, 0.02);
+        touch-action: none;
+    }
+
+    .handle {
+        position: absolute;
+        width: 14px;
+        height: 14px;
+        border-radius: 3px;
+        background: white;
+        border: 2px solid rgba(99, 102, 241, 0.95);
+        box-sizing: border-box;
+    }
+
+    .handle.nw {
+        left: -9px;
+        top: -9px;
+        cursor: nwse-resize
+    }
+
+    .handle.ne {
+        right: -9px;
+        top: -9px;
+        cursor: nesw-resize
+    }
+
+    .handle.sw {
+        left: -9px;
+        bottom: -9px;
+        cursor: nesw-resize
+    }
+
+    .handle.se {
+        right: -9px;
+        bottom: -9px;
+        cursor: nwse-resize
+    }
+
+    .handle.n {
+        left: 50%;
+        transform: translateX(-50%);
+        top: -9px;
+        cursor: ns-resize
+    }
+
+    .handle.s {
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: -9px;
+        cursor: ns-resize
+    }
+
+    .handle.w {
+        top: 50%;
+        transform: translateY(-50%);
+        left: -9px;
+        cursor: ew-resize
+    }
+
+    .handle.e {
+        top: 50%;
+        transform: translateY(-50%);
+        right: -9px;
+        cursor: ew-resize
+    }
+
+    .overlay {
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45));
+        mix-blend-mode: multiply;
+    }
+
+    /* grid lines */
+    .grid-line {
+        position: absolute;
+        background: rgba(255, 255, 255, 0.35);
+    }

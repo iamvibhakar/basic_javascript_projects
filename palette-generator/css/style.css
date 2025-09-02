@@ -1,0 +1,28 @@
+/* small custom styles for the copy tooltip */
+.swatch {
+    transition: transform .12s ease, box-shadow .12s ease;
+}
+
+.swatch:active {
+    transform: scale(.98);
+}
+
+.copy-bubble {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 50%;
+    padding: 6px 10px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 13px;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity .18s ease, transform .18s ease;
+    color: white;
+}
+
+.copy-bubble.show {
+    opacity: 1;
+    transform: translate(-50%, -70%);
+}
