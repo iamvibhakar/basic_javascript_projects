@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Roman Converter</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="min-h-screen bg-gradient-to-br from-sky-100 via-white to-sky-200 flex items-center justify-center p-6">
+    <!-- Card -->
+    <div class="w-full max-w-lg bg-white rounded-3xl shadow-xl p-10 border border-slate-100">
+        <h1 class="text-3xl font-extrabold text-slate-800 text-center mb-6 tracking-wide">
+            Roman Converter
+        </h1>
+
+        <form id="converterForm" class="space-y-5" autocomplete="off">
+            <!-- Input -->
+            <div>
+                <label for="numberInput" class="block text-slate-600 mb-2 font-medium">Enter a number</label>
+                <input id="numberInput" type="number" min="1" max="3999" placeholder="e.g. 1987"
+                    class="w-full px-5 py-3 rounded-2xl border border-slate-200 shadow-sm focus:outline-none focus:ring-4 focus:ring-sky-300 focus:border-sky-400 text-lg transition" />
+            </div>
+
+            <!-- Button -->
+            <button type="submit"
+                class="w-full bg-gradient-to-r from-sky-500 to-indigo-500 hover:from-sky-600 hover:to-indigo-600 transition-all text-white font-semibold text-lg py-3 rounded-2xl shadow-md hover:shadow-xl active:scale-95">
+                Convert
+            </button>
+
+            <!-- Error -->
+            <p id="errorMsg" class="text-sm text-red-600 mt-1 h-5"></p>
+        </form>
+
+        <!-- Result -->
+        <div id="resultWrap" class="mt-8 text-center hidden">
+            <p class="text-slate-500 mb-2 text-base">Roman Number</p>
+            <div id="result" class="text-5xl font-bold text-emerald-600 tracking-wide animate-fade-in"></div>
+        </div>
+    </div>
+
+
+    <!-- Script -->
+    <script src="./js/script.js"></script>
+</body>
+
+</html>
