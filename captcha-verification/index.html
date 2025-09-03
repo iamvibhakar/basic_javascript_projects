@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Captcha Verification</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="flex items-center justify-center min-h-screen bg-gradient-to-br from-indigo-500 to-purple-600">
+
+    <div class="bg-white p-6 rounded-xl shadow-xl w-96 text-center">
+        <h2 class="text-xl font-semibold mb-4">Captcha Verification</h2>
+
+        <!-- Captcha Box -->
+        <div
+            class="flex items-center justify-between bg-black text-white text-lg font-bold tracking-widest px-4 py-2 rounded-md mb-4">
+            <span id="captcha" class="select-none"></span>
+            <button onclick="generateCaptcha()" class="p-1 rounded-full hover:bg-gray-700 transition">
+                <!-- Heroicons Refresh Icon -->
+                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="30" height="30" viewBox="0 0 64 64">
+                    <linearGradient id="eD5UBieNdS4tAOvczsFH5a_43655_gr1" x1="32" x2="32" y1="25.75" y2="38.498"
+                        gradientUnits="userSpaceOnUse" spreadMethod="reflect">
+                        <stop offset="0" stop-color="#6dc7ff"></stop>
+                        <stop offset="1" stop-color="#e6abff"></stop>
+                    </linearGradient>
+                    <path fill="url(#eD5UBieNdS4tAOvczsFH5a_43655_gr1)" d="M32 27A5 5 0 1 0 32 37A5 5 0 1 0 32 27Z">
+                    </path>
+                    <linearGradient id="eD5UBieNdS4tAOvczsFH5b_43655_gr2" x1="32" x2="32" y1="4.5" y2="59.536"
+                        gradientUnits="userSpaceOnUse" spreadMethod="reflect">
+                        <stop offset="0" stop-color="#1a6dff"></stop>
+                        <stop offset="1" stop-color="#c822ff"></stop>
+                    </linearGradient>
+                    <path fill="url(#eD5UBieNdS4tAOvczsFH5b_43655_gr2)"
+                        d="M32,6C17.663,6,6,17.663,6,32s11.663,26,26,26s26-11.663,26-26S46.337,6,32,6z M32,56 C18.767,56,8,45.233,8,32S18.767,8,32,8s24,10.767,24,24S45.233,56,32,56z">
+                    </path>
+                    <linearGradient id="eD5UBieNdS4tAOvczsFH5c_43655_gr3" x1="29.5" x2="29.5" y1="4.5" y2="59.536"
+                        gradientUnits="userSpaceOnUse" spreadMethod="reflect">
+                        <stop offset="0" stop-color="#1a6dff"></stop>
+                        <stop offset="1" stop-color="#c822ff"></stop>
+                    </linearGradient>
+                    <path fill="url(#eD5UBieNdS4tAOvczsFH5c_43655_gr3)"
+                        d="M32,15c-3.584,0-7.012,1.103-9.913,3.188l1.168,1.623C25.813,17.973,28.838,17,32,17 c8.271,0,15,6.729,15,15s-6.729,15-15,15c-7.934,0-14.431-6.195-14.949-14h2.804c0.772,0,1.465-0.388,1.854-1.038 c0.371-0.619,0.39-1.365,0.052-1.995l-3.557-6.645c-0.436-0.811-1.278-1.313-2.199-1.313c-0.924,0-1.77,0.506-2.208,1.32 l-3.555,6.634c-0.339,0.632-0.32,1.379,0.051,1.998c0.39,0.65,1.082,1.039,1.854,1.039h2.905C15.573,41.908,22.963,49,32,49 c9.374,0,17-7.626,17-17S41.374,15,32,15z M12.004,30.908l3.555-6.633c0.129-0.241,0.354-0.267,0.445-0.267 c0.111,0,0.315,0.033,0.437,0.259L20,30.916C19.999,30.927,19.967,31,19.854,31h-7.709C12.031,31,12.001,30.925,12.004,30.908z">
+                    </path>
+                </svg>
+            </button>
+        </div>
+
+        <!-- Input -->
+        <input id="captchaInput" type="text" placeholder="Enter Captcha"
+            class="w-full border rounded-lg p-2 text-center focus:ring-2 focus:ring-indigo-400 outline-none mb-3" />
+
+        <!-- Verify Button -->
+        <button onclick="validateCaptcha()"
+            class="w-full bg-green-600 text-white py-2 rounded-lg hover:bg-green-700 transition">
+            Verify
+        </button>
+
+        <!-- Message -->
+        <p id="message" class="mt-3 text-sm font-medium"></p>
+    </div>
+
+    <script src="./js/script.js"></script>
+
+</body>
+
+</html>
