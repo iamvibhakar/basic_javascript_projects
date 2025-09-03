@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Generator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gradient-to-br from-blue-50 to-indigo-100 min-h-screen flex items-center justify-center p-4">
+    <div class="bg-white rounded-xl shadow-lg p-6 w-full max-w-md">
+        <h1 class="text-2xl font-bold text-center text-gray-800 mb-6">Password Generator</h1>
+
+        <div class="mb-6">
+            <label for="passwordLength" class="block text-sm font-medium text-gray-700 mb-2">Password Length: <span
+                    id="lengthValue" class="text-indigo-600">4</span></label>
+            <input id="passwordLength" type="range" min="4" max="32" value="4"
+                class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer">
+        </div>
+
+        <div class="space-y-3 mb-6">
+            <div class="flex items-center">
+                <input id="lowercase" type="checkbox" checked
+                    class="w-4 h-4 text-indigo-600 bg-gray-100 border-gray-300 rounded focus:ring-indigo-500">
+                <label for="lowercase" class="ml-2 text-sm font-medium text-gray-700">Include Lowercase Letters</label>
+            </div>
+            <div class="flex items-center">
+                <input id="uppercase" type="checkbox" checked
+                    class="w-4 h-4 text-indigo-600 bg-gray-100 border-gray-300 rounded focus:ring-indigo-500">
+                <label for="uppercase" class="ml-2 text-sm font-medium text-gray-700">Include Uppercase Letters</label>
+            </div>
+            <div class="flex items-center">
+                <input id="numbers" type="checkbox" checked
+                    class="w-4 h-4 text-indigo-600 bg-gray-100 border-gray-300 rounded focus:ring-indigo-500">
+                <label for="numbers" class="ml-2 text-sm font-medium text-gray-700">Include Numbers</label>
+            </div>
+            <div class="flex items-center">
+                <input id="symbols" type="checkbox" checked
+                    class="w-4 h-4 text-indigo-600 bg-gray-100 border-gray-300 rounded focus:ring-indigo-500">
+                <label for="symbols" class="ml-2 text-sm font-medium text-gray-700">Include Symbols</label>
+            </div>
+        </div>
+
+        <button id="generateBtn"
+            class="w-full bg-indigo-600 text-white py-3 px-4 rounded-lg font-medium hover:bg-indigo-700 transition duration-200 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
+            Generate Password
+        </button>
+
+        <div class="mt-6 p-4 bg-gray-50 rounded-lg">
+            <div class="flex justify-between items-center mb-2">
+                <span class="text-sm font-medium text-gray-700">Your Password:</span>
+                <button id="copyBtn"
+                    class="text-indigo-600 hover:text-indigo-800 text-sm font-medium flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                    </svg>
+                    Copy
+                </button>
+            </div>
+            <div id="passwordOutput" class="text-2xl font-mono text-gray-800 text-center py-2">LQEe</div>
+            <div class="mt-4">
+                <div class="flex justify-between items-center mb-1">
+                    <span id="strengthText" class="text-sm font-medium">Strength: Weak</span>
+                    <span id="entropyValue" class="text-xs text-gray-500">Entropy: 18 bits</span>
+                </div>
+                <div class="w-full bg-gray-200 rounded-full h-2.5">
+                    <div id="strengthBar" class="bg-red-500 h-2.5 rounded-full" style="width: 33%"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./js/script.js"></script>
+</body>
+
+</html>
