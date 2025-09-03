@@ -1,0 +1,98 @@
+/* Custom styles for Text Formatter Tool */
+
+/* Smooth transitions for all interactive elements */
+* {
+    transition: all 0.2s ease-in-out;
+}
+
+/* Custom scrollbar for textarea */
+#textInput::-webkit-scrollbar {
+    width: 8px;
+}
+
+#textInput::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+#textInput::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 4px;
+}
+
+#textInput::-webkit-scrollbar-thumb:hover {
+    background: #a8a8a8;
+}
+
+/* Focus states */
+input:focus,
+textarea:focus,
+select:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+/* Button hover effects */
+button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+
+/* Responsive design adjustments */
+@media (max-width: 640px) {
+    .container {
+        padding: 1rem;
+    }
+
+    h1 {
+        font-size: 1.875rem;
+    }
+
+    .grid-cols-1.md\\:grid-cols-2 {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Animation for text changes */
+.text-updated {
+    animation: highlight 0.5s ease-in-out;
+}
+
+@keyframes highlight {
+    0% {
+        background-color: #fef3c7;
+    }
+
+    100% {
+        background-color: transparent;
+    }
+}
+
+/* Loading state for buttons */
+button.loading {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+button.loading::after {
+    content: '';
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border: 2px solid #ffffff;
+    border-radius: 50%;
+    border-top-color: transparent;
+    animation: spin 1s ease-in-out infinite;
+    margin-left: 8px;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
