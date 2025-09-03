@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Currency Converter</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="min-h-screen flex items-center justify-center bg-[#0b1220] p-6">
+    <main class="w-full max-w-lg bg-[#2b3550] rounded-2xl p-8 shadow-xl text-white/90">
+        <h1 class="text-3xl font-bold text-center mb-6">Currency Converter</h1>
+
+        <form id="form" class="space-y-4" onsubmit="return false;">
+            <div>
+                <label for="amount" class="sr-only">Amount</label>
+                <input id="amount" type="number" placeholder="Enter INR amount" step="any" min="1"
+                    class="w-full rounded-lg px-4 py-3 text-lg text-gray-900 placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-400" />
+            </div>
+
+            <div class="grid grid-cols-2 gap-4">
+                <button id="convertBtn"
+                    class="py-3 rounded-lg bg-blue-500 hover:bg-blue-600 font-medium">Convert</button>
+                <button id="resetBtn" type="button"
+                    class="py-3 rounded-lg bg-red-500 hover:bg-red-600 font-medium">Reset</button>
+            </div>
+        </form>
+
+        <section id="results" class="mt-6 grid gap-4 hidden">
+            <div class="bg-gray-800 p-4 rounded-xl flex justify-between items-center shadow-md">
+                <span class="font-semibold">🇺🇸 US Dollar (USD)</span>
+                <span id="usd" class="text-lg font-bold text-green-400">$ 0.00</span>
+            </div>
+
+            <div class="bg-gray-800 p-4 rounded-xl flex justify-between items-center shadow-md">
+                <span class="font-semibold">🇦🇪 Dirham (AED)</span>
+                <span id="aed" class="text-lg font-bold text-green-400">د.إ 0.00</span>
+            </div>
+
+            <div class="bg-gray-800 p-4 rounded-xl flex justify-between items-center shadow-md">
+                <span class="font-semibold">🇳🇵 Nepali Rupee (NPR)</span>
+                <span id="npr" class="text-lg font-bold text-green-400">रू 0.00</span>
+            </div>
+
+            <div class="bg-gray-800 p-4 rounded-xl flex justify-between items-center shadow-md">
+                <span class="font-semibold">🇵🇰 Pakistani Rupee (PKR)</span>
+                <span id="pkr" class="text-lg font-bold text-green-400">₨ 0.00</span>
+            </div>
+
+            <div class="bg-gray-800 p-4 rounded-xl flex justify-between items-center shadow-md">
+                <span class="font-semibold">🇪🇺 Euro (EUR)</span>
+                <span id="eur" class="text-lg font-bold text-green-400">€ 0.00</span>
+            </div>
+
+            <div class="bg-gray-800 p-4 rounded-xl flex justify-between items-center shadow-md">
+                <span class="font-semibold">🇯🇵 Japanese Yen (JPY)</span>
+                <span id="jpy" class="text-lg font-bold text-green-400">¥ 0.00</span>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="./js/script.js"></script>
+
+</body>
+
+</html>
