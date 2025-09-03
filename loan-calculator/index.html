@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Loan Calculator</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+
+  <div class="bg-white shadow-lg rounded-2xl p-8 w-full max-w-md">
+    <h2 class="text-2xl font-bold text-center mb-6">Loan Calculator</h2>
+
+    <!-- Loan Amount -->
+    <label class="block mb-2 font-semibold">Loan Amount (₹):</label>
+    <input type="number" id="loanAmount" placeholder="Enter amount" 
+      class="w-full p-3 border rounded-lg mb-4 focus:outline-none focus:ring focus:ring-blue-400" />
+
+    <!-- Interest Rate -->
+    <label class="block mb-2 font-semibold">Interest Rate (%):</label>
+    <input type="number" id="interestRate" placeholder="Enter interest rate" 
+      class="w-full p-3 border rounded-lg mb-4 focus:outline-none focus:ring focus:ring-blue-400" />
+
+    <!-- Loan Term -->
+    <label class="block mb-2 font-semibold">Loan Term (years):</label>
+    <input type="number" id="loanTerm" placeholder="Enter loan term" 
+      class="w-full p-3 border rounded-lg mb-6 focus:outline-none focus:ring focus:ring-blue-400" />
+
+    <!-- Buttons -->
+    <div class="flex gap-4 mb-6">
+      <button onclick="calculateLoan()" 
+        class="flex-1 bg-green-600 text-white py-3 rounded-lg font-semibold hover:bg-green-700">
+        Calculate
+      </button>
+      <button onclick="resetForm()" 
+        class="flex-1 bg-red-500 text-white py-3 rounded-lg font-semibold hover:bg-red-600">
+        Reset
+      </button>
+    </div>
+
+    <!-- Result -->
+    <div id="result" class="text-center text-lg font-bold text-gray-700">
+      Monthly Payment: ₹0.00
+    </div>
+  </div>
+
+  <script src="./js/script.js"></script>
+</body>
+</html>
